@@ -31,8 +31,13 @@ DT::datatable(tbl)
 
 This repository pulls data from several sources:
 
-- [ClinicalTrials.gov] (https://clinicaltrials.gov)
+- [ClinicalTrials.gov](https://clinicaltrials.gov)
 
 - [Drugbank](https://go.drugbank.com)
 
 - [Drug Repurposing Hub](https://www.broadinstitute.org/drug-repurposing-hub)
+
+## Cancer-related trials
+
+The dataset selects only clinical trials that are interventional (as opposed to observational) and related to cancer (i.e., listing conditions with cancer-related terms). 
+
