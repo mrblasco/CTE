@@ -27,3 +27,12 @@ tbl <- find_intervention("aspirin")
 DT::datatable(tbl)
 ```
 
+## Source data
+
+This repository pulls data from several sources:
+
+- [ClinicalTrials.gov] (https://clinicaltrials.gov)
+
+- [Drugbank](https://go.drugbank.com)
+
+- [Drug Repurposing Hub](https://www.broadinstitute.org/drug-repurposing-hub)
