@@ -18,10 +18,12 @@ devtools::install_github("mrblasco/CTE")
 
 ## Example
 
-This is a basic example which shows you find cancer-related clinical trials that include a particular drug (e.g., aspirin) as intervention:
+This is a basic example which shows you how to find cancer-related clinical trials that list a particular drug, e.g., aspirin, as treatment intervention:
 
 ```r
+library(DT)
 library(CTE)
-find_intervention("aspirin") 
+tbl <- find_intervention("aspirin") 
+DT::datatable(tbl)
 ```
 
