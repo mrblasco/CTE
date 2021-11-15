@@ -15,3 +15,7 @@ Depends:
 LazyData: true
 URL: https://github.com/mrblasco/CTE
 BugReports: https://github.com/mrblasco/CTE/issues
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr

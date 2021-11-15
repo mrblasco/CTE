@@ -1,1 +1,4 @@
 ^data-raw$
+^doc$
+^Meta$
+^Makefile$

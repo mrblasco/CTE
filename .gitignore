@@ -5,3 +5,6 @@
 .DS_Store
 data-raw/clinicaltrials
 data-raw/*.csv
+inst/doc
+/doc/
+/Meta/

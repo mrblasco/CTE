@@ -25,7 +25,7 @@ ct_cond <-
     raw %>%
     filter(id %in% cancer_id) %>% 
     arrange(id)
-
+    
 raw <- readr::read_csv("data-raw/ct-info.csv", guess_max = 1e4)
 
 ct_info <- 

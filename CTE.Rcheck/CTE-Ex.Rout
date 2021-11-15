@@ -1,0 +1,71 @@
+
+R version 4.1.1 (2021-08-10) -- "Kick Things"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "CTE"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('CTE')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("find_intervention")
+> ### * find_intervention
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: find_intervention
+> ### Title: Find trials listing drug name as intervention
+> ### Aliases: find_intervention
+> 
+> ### ** Examples
+> 
+> find_intervention('aspirin')
+# A tibble: 22 × 8
+   id          name    title status date       description enrollment enrollment_type
+   <chr>       <chr>   <chr> <chr>  <date>     <chr>            <dbl> <chr>          
+ 1 NCT00224679 Aspirin Pros… Termi… 2005-09-19 "The APACC…        300 <NA>           
+ 2 NCT00272324 Aspirin Aspi… Compl… 2006-01-03 "This is a…       1121 <NA>           
+ 3 NCT00357682 Aspirin A Ph… Unkno… 2006-07-26 "PRIMARY O…       2513 Actual         
+ 4 NCT00790452 Aspirin A Ra… Termi… 2008-11-07 "Study Dru…          1 Actual         
+ 5 NCT00983580 Aspirin Rand… Compl… 2009-09-23 "PRIMARY O…        107 Actual         
+ 6 NCT01496521 Aspirin Chem… Unkno… 2011-12-15  <NA>              600 Anticipated    
+ 7 NCT01936233 Aspirin Live… Recru… 2013-09-02 "The inves…        112 Anticipated    
+ 8 NCT02123849 Aspirin The … Compl… 2014-04-24 "PRIMARY O…         54 Actual         
+ 9 NCT02420652 Aspirin A Ph… Termi… 2015-04-15 "PRIMARY O…         27 Actual         
+10 NCT02748304 aspirin A Pr… Termi… 2016-04-12 "The recur…         52 Actual         
+# … with 12 more rows
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.577 0.044 0.787 0.006 0.004 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
