@@ -37,6 +37,8 @@ This repository pulls data from several sources:
 
 - [Drug Repurposing Hub](https://www.broadinstitute.org/drug-repurposing-hub)
 
+- [TTD: Therapeutic Target Database](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC99057/)
+
 ## Cancer-related trials
 
 The dataset selects only clinical trials that are interventional (as opposed to observational) and related to cancer (i.e., listing conditions with cancer-related terms). 
