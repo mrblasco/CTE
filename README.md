@@ -86,7 +86,7 @@ ct_cond %>% # conditions data
 
 ## Full description of data access and functions
 
-The vignette `explorer` in the CTE package contains more details about all the data available nad the functions for matching drugs by name using fuzzy string matching. 
+The vignette `explorer` in the CTE package contains more details about all the data available and functions for matching drugs by name using fuzzy string matching. 
 
 ```{r}
 vignette('explorer',package="CTE")
