@@ -1,3 +1,4 @@
+
 ---
 title: "Cancer Trials Explorer (CTE) -- examples"
 output: rmarkdown::html_vignette
@@ -12,29 +13,97 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-```
-
-Load libraries.  
-
-```{r setup}
-library(CTE)
 library(dplyr, warn = FALSE) # for data wrangling 
 library(DT) # use datatables to format outcomes
 ```
 
+The CTE library pulls data from several sources:
+
+- [ClinicalTrials.gov](https://clinicaltrials.gov)
+
+- [Drugbank](https://go.drugbank.com)
+
+- [Drug Repurposing Hub](https://www.broadinstitute.org/drug-repurposing-hub)
+
+- [TTD: Therapeutic Target Database](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC99057/)
+
+## Filtering clinical trials
+
+ClinicalTrials.gov hosts data for hundreds of thousand clinical trials (CTs) targeting a wide variety of conditions. 
+
+The goal of this library is to focus on CTs interventional (as opposed to observational) treating a cancer-related condition. 
+
+Accordingly, I included only CTs with terms related to cancer (e.g., cancer, tumor, leukemia, melanoma, glaucoma) in the conditions targeted by their intervention. 
+
+## Data access
+
+To access the data you first need to load the library.  
+
+```{r setup}
+library(CTE)
+```
+
+Then, the dataset is stored in separate files available in _lazy_ mode (i.e., loaded when needed).
+
+For example, to query the list of cancer-related clinical trials in the data you can type the following:
+
+Clinical trial basic information 
+
+```{r}
+data(ct_info)
+ct_info
+```
+
+Clinical trial list of associated interventions (e.g., drug treatments)
+
+```{r}
+data(ct_interv)
+ct_interv
+```
+
+Clinical trial list of associated targeted conditions
+
+```{r}
+data(ct_cond)
+ct_cond
+```
+
+Drug bank list of drugs 
+
+```{r}
+data(drugbank)
+drugbank
+```
+
+Repurposing Hub list of drugs with functional annotations
+
+```{r}
+data(repurp)
+repurp
+```
+
+Gene targets from TTD
+
+```{r}
+data(gene_targets)
+gene_targets
+```
+
+
+## Querying the data 
+
+The library also includes functions to match drugs by name across the different datasets, or to query a particular drug name among the CT interventions. 
+
 ## Clinical trials listing bortezomib as intervention
 
-The example below shows how to obtain a catalog of interventions in cancer-related clinical trials matched with the string `bortezomib`. 
+For example, below I show how to obtain a catalog of interventions in cancer-related clinical trials matched with the string `bortezomib`. 
 
 
 ```{r}
 tbl <- find_intervention("bortezomib")
-tbl
 ```
 
-The function returns a list of interventions matched with the name `bortezomib`. 
-
-Each intervention is associated with a unique clinical trial ID, title, status, date of registration, a detailed description of the study, and the number of enrolled subjects (either expected or actual) for `r dplyr::n_distinct(tbl$id)` clinical trials (out of `r nrow(tbl)` entries). 
+The function returns a list of interventions matched with the name `bortezomib`. Each intervention is associated with a unique clinical trial ID, title, status, date of registration, a detailed description of the study, and the number of enrolled subjects (either expected or actual) for `r dplyr::n_distinct(tbl$id)` clinical trials (out of `r nrow(tbl)` entries). 
  
 I use the function `datatable` from the package `DT` to show the results  as HTML table. 
 

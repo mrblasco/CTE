@@ -19,7 +19,7 @@ install_deps:
 	-e 'if (!requireNamespace("remotes")) install.packages("remotes")' \
 	-e 'remotes::install_deps(dependencies = TRUE)'
 
-install: build
+install:
 	R CMD INSTALL $(PKGNAME)_$(PKGVERS).tar.gz
 
 document:
@@ -27,3 +27,6 @@ document:
 
 clean:
 	@rm -rf $(PKGNAME)_$(PKGVERS).tar.gz $(PKGNAME).Rcheck
+
+
+# Notes

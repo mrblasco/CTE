@@ -21,11 +21,7 @@
     data   7.9Mb
 * checking package directory ... OK
 * checking ‘build’ directory ... OK
-* checking DESCRIPTION meta-information ... WARNING
-Non-standard license specification:
-  `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-  license
-Standardizable: FALSE
+* checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
 * checking for left-over files ... OK
 * checking index information ... OK
@@ -81,4 +77,4 @@ Extensions’ manual.
   ‘explorer.Rmd’ using ‘UTF-8’... OK
 * checking re-building of vignette outputs ... OK
 * DONE
-Status: 4 WARNINGs, 4 NOTEs
+Status: 3 WARNINGs, 4 NOTEs
