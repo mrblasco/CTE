@@ -55,6 +55,35 @@ tbl
 10 NCT00077428 bort… Phas… Compl… 2004-02-10 "OBJECTIVE…         37 Actual   
 ```
 
+
+You can also query all cancer-related clinical trials in the package to see what interventions have been targeting a specific condition. 
+
+For example, 
+
+```{r}
+require(dplyr, warn = F)
+ct_cond %>% # conditions data
+    filter(grepl("EGFR", condition, ignore.case = T)) %>%  # Filter EGFR related
+    inner_join(ct_interv) %>% # Join with list of interventions
+    count(name, sort = TRUE, name = "num_ct") # Count number of itnerventions
+```
+
+```
+# A tibble: 58 × 2
+   name                    num_ct
+   <chr>                    <int>
+ 1 BLU-945                      7
+ 2 Erlotinib                    4
+ 3 Chemotherapy                 3
+ 4 Osimertinib                  3
+ 5 Cisplatin                    2
+ 6 Docetaxel                    2
+ 7 Erlotinib Hydrochloride      2
+ 8 Icotinib                     2
+ 9 Pembrolizumab                2
+10 ABT-414                      1
+```
+
 ## Full description of data access and functions
 
 The vignette `explorer` in the CTE package contains more details about all the data available nad the functions for matching drugs by name using fuzzy string matching. 
