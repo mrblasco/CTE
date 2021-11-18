@@ -58,7 +58,7 @@ tbl
 
 You can also query all cancer-related clinical trials in the package to see what interventions have been targeting a specific condition. 
 
-For example, 
+For example, you can query all the drugs listed as interventions in CTs related to EGFR mutations with the following commands: 
 
 ```{r}
 require(dplyr, warn = F)
