@@ -21,7 +21,8 @@
     data   7.9Mb
 * checking package directory ... OK
 * checking ‘build’ directory ... OK
-* checking DESCRIPTION meta-information ... OK
+* checking DESCRIPTION meta-information ... NOTE
+Malformed Description field: should contain one or more complete sentences.
 * checking top-level files ... OK
 * checking for left-over files ... OK
 * checking index information ... OK
@@ -33,8 +34,9 @@
 * checking whether the package can be unloaded cleanly ... OK
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
-* checking dependencies in R code ... WARNING
-'::' or ':::' import not declared from: ‘dplyr’
+* checking dependencies in R code ... NOTE
+Namespace in Imports field not imported from: ‘DT’
+  All declared Imports should be used.
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
@@ -42,6 +44,12 @@
 find_intervention: warning in grep(sprintf("\\b%s\\b", name), df$name,
   useBytes = TRUE, ignore = TRUE): partial argument match of 'ignore'
   to 'ignore.case'
+find_drugs: no visible binding for global variable ‘name’
+find_drugs: no visible binding for global variable ‘id’
+find_drugs: no visible global function definition for ‘desc’
+find_drugs: no visible binding for global variable ‘num_ct’
+Undefined global functions or variables:
+  desc id name num_ct
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd cross-references ... OK
@@ -67,14 +75,10 @@ Extensions’ manual.
 * checking installed files from ‘inst/doc’ ... OK
 * checking files in ‘vignettes’ ... OK
 * checking examples ... OK
-* checking for unstated dependencies in vignettes ... NOTE
-'::' or ':::' imports not declared from:
-  ‘DT’ ‘dplyr’
-'library' or 'require' calls not declared from:
-  ‘DT’ ‘dplyr’
+* checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in ‘inst/doc’ ... OK
 * checking running R code from vignettes ... NONE
   ‘explorer.Rmd’ using ‘UTF-8’... OK
 * checking re-building of vignette outputs ... OK
 * DONE
-Status: 3 WARNINGs, 4 NOTEs
+Status: 2 WARNINGs, 5 NOTEs

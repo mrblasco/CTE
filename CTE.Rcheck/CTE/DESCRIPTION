@@ -1,10 +1,10 @@
 Package: CTE
-Title: What the Package Does (One Line, Title Case)
+Title: Cancer Trial Explorer (CTE)
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Andrea", "Blasco", , "mrblasco@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Explore clinical trials data
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -15,8 +15,9 @@ URL: https://github.com/mrblasco/CTE
 BugReports: https://github.com/mrblasco/CTE/issues
 Suggests: rmarkdown, knitr
 VignetteBuilder: knitr
+Imports: DT, dplyr
 NeedsCompilation: no
-Packaged: 2021-11-18 14:53:49 UTC; mrb
-Author: First Last [aut, cre] (YOUR-ORCID-ID)
-Maintainer: First Last <first.last@example.com>
-Built: R 4.1.1; ; 2021-11-18 14:53:55 UTC; unix
+Packaged: 2021-11-19 16:24:31 UTC; mrb
+Author: Andrea Blasco [aut, cre] (YOUR-ORCID-ID)
+Maintainer: Andrea Blasco <mrblasco@gmail.com>
+Built: R 4.1.1; ; 2021-11-19 16:24:37 UTC; unix

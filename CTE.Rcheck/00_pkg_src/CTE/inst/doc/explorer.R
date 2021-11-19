@@ -37,6 +37,7 @@ gene_targets
 tbl <- find_intervention("bortezomib")
 
 ## -----------------------------------------------------------------------------
+require(DT)
 DT::datatable(dplyr::select(tbl, -enrollment,-enrollment_type)
     , rownames = FALSE
     , filter = "top"

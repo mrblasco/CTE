@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{find_intervention}
 \alias{find_intervention}
-\title{Find trials listing drug name as intervention}
+\title{Find trials listing a given drug name as intervention}
 \usage{
 find_intervention(name)
 }
@@ -10,8 +10,8 @@ find_intervention(name)
 \item{name, }{drug name (or other keyword)}
 }
 \description{
-Find trials listing drug name as intervention
+Find trials listing a given drug name as intervention
 }
 \examples{
-find_intervention('aspirin')
+find_intervention('bortezomib')
 }

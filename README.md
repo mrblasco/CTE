@@ -58,30 +58,27 @@ tbl
 
 You can also query all cancer-related clinical trials in the package to see what interventions have been targeting a specific condition. 
 
-For example, you can query all the drugs listed as interventions in CTs related to EGFR mutations with the following commands: 
+For example, you can query all the drugs listed as interventions in CTs related to sarcomas with the following commands: 
 
 ```{r}
-require(dplyr, warn = F)
-ct_cond %>% # conditions data
-    filter(grepl("EGFR", condition, ignore.case = T)) %>%  # Filter EGFR related
-    inner_join(ct_interv) %>% # Join with list of interventions
-    count(name, sort = TRUE, name = "num_ct") # Count number of itnerventions
+find_drugs("sarcoma")
 ```
 
 ```
-# A tibble: 58 × 2
-   name                    num_ct
-   <chr>                    <int>
- 1 BLU-945                      7
- 2 Erlotinib                    4
- 3 Chemotherapy                 3
- 4 Osimertinib                  3
- 5 Cisplatin                    2
- 6 Docetaxel                    2
- 7 Erlotinib Hydrochloride      2
- 8 Icotinib                     2
- 9 Pembrolizumab                2
-10 ABT-414                      1
+# A tibble: 1,200 × 5
+   name                      num_ct first      last       ct_id                 
+   <chr>                      <int> <date>     <date>     <chr>                 
+ 1 Doxorubicin                   66 2002-05-29 2021-08-02 NCT00038142|NCT000683…
+ 2 Temozolomide                  63 2005-01-31 2021-05-15 NCT00102648|NCT001947…
+ 3 ifosfamide                    52 1999-11-01 2014-08-15 NCT00001300|NCT000024…
+ 4 Cyclophosphamide              49 2002-05-29 2021-07-09 NCT00038142|NCT001651…
+ 5 doxorubicin hydrochloride     49 1999-11-01 2010-08-25 NCT00002466|NCT000024…
+ 6 Ifosfamide                    39 1999-11-01 2021-07-13 NCT00003657|NCT000895…
+ 7 cyclophosphamide              37 1999-11-01 2013-09-16 NCT00002466|NCT000025…
+ 8 etoposide                     37 1999-11-01 2013-09-16 NCT00002466|NCT000025…
+ 9 Gemcitabine                   34 2003-09-10 2021-05-21 NCT00068393|NCT001425…
+10 vincristine sulfate           28 1999-11-01 2008-04-18 NCT00002466|NCT000025…
+# … with 1,190 more rows
 ```
 
 ## Full description of data access and functions

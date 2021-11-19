@@ -108,6 +108,7 @@ The function returns a list of interventions matched with the name `bortezomib`.
 I use the function `datatable` from the package `DT` to show the results  as HTML table. 
 
 ```{r}
+require(DT)
 DT::datatable(dplyr::select(tbl, -enrollment,-enrollment_type)
     , rownames = FALSE
     , filter = "top"

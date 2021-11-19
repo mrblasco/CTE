@@ -1,2 +1,6 @@
 drugbank                DrugBank vocabulary
-find_intervention       Find trials listing drug name as intervention
+find_drugs              Find interventional drugs listed in clinical
+                        trials associated with a given clinical
+                        condition
+find_intervention       Find trials listing a given drug name as
+                        intervention

@@ -6,18 +6,35 @@ library('CTE')
 base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 cleanEx()
+nameEx("find_drugs")
+### * find_drugs
+
+flush(stderr()); flush(stdout())
+
+### Name: find_drugs
+### Title: Find interventional drugs listed in clinical trials associated
+###   with a given clinical condition
+### Aliases: find_drugs
+
+### ** Examples
+
+find_drugs('sarcoma')
+
+
+
+cleanEx()
 nameEx("find_intervention")
 ### * find_intervention
 
 flush(stderr()); flush(stdout())
 
 ### Name: find_intervention
-### Title: Find trials listing drug name as intervention
+### Title: Find trials listing a given drug name as intervention
 ### Aliases: find_intervention
 
 ### ** Examples
 
-find_intervention('aspirin')
+find_intervention('bortezomib')
 
 
 
